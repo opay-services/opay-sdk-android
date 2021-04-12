@@ -70,13 +70,13 @@ public class MainActivity extends BaseActivity {
   private void testPay() {
     showLoading();
     new PayTask.GatewayBuilder(
-            10,//订单金额
-            "NGN",//币种
-            "superbetorder" + new Random().nextInt(),//商户订单号
-            "superbet",//商户名称
-             publicKey)//publicKey，商户后台查询
-        .merchantUserId("123456")//商家用户id，可选参数
-        .description("我是sdk，需要支付……")//订单说明，可选参数
+            10,//order amount
+            "NGN",//Currency
+            "superbetorder" + new Random().nextInt(),//Merchant order number
+            "superbet",//Business Name
+             publicKey)//publicKey，Query from the merchant background
+        .merchantUserId("123456")//Merchant user id，Optional parameters，For display at the cash register
+        .description("我是sdk，需要支付……")//Order description，Optional parameters，For display at the cash register
         .build()
         .pay(
             MainActivity.this,
@@ -91,15 +91,15 @@ public class MainActivity extends BaseActivity {
   private void testPayForNewGateway() {
     showLoading();
     new PayTask.GatewayCommitBuilder(
-            10,//订单金额
-            "NGN",//币种
-            "superbetorder" + new Random().nextInt(),//商户订单号
-            "superbet",//商户名称
-             publicKey,//publicKey，商户后台查询
-            "524352435243",//opay订单号
-            PaymentType.ESCROW)//支付方式，1、ESCROW（担保支付）2、ORDINARY（新版商户收单）
-        .merchantUserId("123456")//商家用户id，可选参数
-        .description("我是sdk，需要支付……")//订单说明，可选参数
+            10,//order amount
+            "NGN",//Currency
+            "superbetorder" + new Random().nextInt(),//Merchant order number
+            "superbet",//Business Name
+             publicKey,//publicKey，Query from the merchant background
+            "524352435243",//opay order number
+            PaymentType.ESCROW)//payment method，1、ESCROW（Guaranteed payment）2、ORDINARY（New version of merchant acquiring）
+        .merchantUserId("123456")//Merchant user id，Optional parameters，For display at the cash register
+        .description("description……")//Order description，Optional parameters，For display at the cash register
         .build()
         .pay(
             MainActivity.this,
