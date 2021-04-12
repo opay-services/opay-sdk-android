@@ -72,9 +72,10 @@ new PayTask.GatewayCommitBuilder(
             });
 ```
 
-Payment result acquisition and processing
-After calling the pay method to pay, the payment result will be obtained in two ways:
-● Synchronous return
-The merchant application client obtains the payment result through its callback function in the Activity that currently calls the payment. You can refer to the above code
-● Asynchronous notification
-Merchants need to provide an http protocol interface. After the payment is completed, the opay server will call this interface to transfer data​.
+## Payment result acquisition and processing  
+
+After calling the pay method to pay, the payment result will be obtained in two ways:  
+● Synchronous return  
+The merchant application client obtains the payment result through its callback function in the Activity that currently calls the payment. You can refer to the above code  
+● Asynchronous notification  
+Merchants need to provide an http protocol interface. After the payment is completed, the opay server will call this interface to transfer data​.  
